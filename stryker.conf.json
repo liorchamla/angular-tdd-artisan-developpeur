@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "_comment": "",
+  "mutate": [
+    "src/**/*.ts",
+    "!src/**/*.spec.ts",
+    "!src/test.ts",
+    "!src/environments/*.ts",
+    "!cypress/**/*.ts",
+    "!cypress/**/spec.ts"
+  ],
+  "testRunner": "karma",
+  "karma": {
+    "configFile": "karma.conf.js",
+    "projectType": "angular-cli",
+    "config": {
+      "browsers": ["ChromeHeadless"]
+    }
+  },
+  "reporters": ["progress", "clear-text", "html"],
+  "concurrency": 2,
+  "concurrency_comment": "Recommended to use about half of your available cores when running stryker with angular",
+  "coverageAnalysis": "perTest",
+  "checkers": ["typescript"],
+  "tsconfigFile": "tsconfig.json"
+}
