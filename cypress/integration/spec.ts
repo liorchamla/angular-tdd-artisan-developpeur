@@ -1,4 +1,4 @@
-describe('Restaurant Pass Checker', () => {
+describe('Security Number Checker', () => {
   it('should appear as the given mockup', () => {
     // When I go to '/'
     cy.visit('/')
