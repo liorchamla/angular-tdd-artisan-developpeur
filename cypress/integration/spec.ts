@@ -38,7 +38,7 @@ describe('Security Number Checker', () => {
 
   it('should reject false security number', () => {
     // Http setup to stub a failing API response
-    cy.intercept('https://api.test/validate/186103013999001', {
+    cy.intercept('https://api.test/validate/1861013999001', {
       statusCode: 404,
     });
 
@@ -46,7 +46,7 @@ describe('Security Number Checker', () => {
     cy.visit('/');
 
     // When I type in a well formatted but false number
-    cy.get('[data-cy-security-number]').type('186103013999001');
+    cy.get('[data-cy-security-number]').type('1861013999001');
     // And I submit the form
     cy.get('[data-cy-submit]').click();
 
@@ -64,7 +64,7 @@ describe('Security Number Checker', () => {
 
   it('should accept a valid security number', () => {
     // Http setup to stub a successful API response
-    cy.intercept('https://api.test/validate/186103013055001', {
+    cy.intercept('https://api.test/validate/1861013055001', {
       statusCode: 200,
     });
 
